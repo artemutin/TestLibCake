@@ -2,10 +2,12 @@
 #  Build Script                   #
 #---------------------------------#
 build_script:
-  - ps: .\build.ps1 -Target Default
+  - ps: .\build.ps1 -Target Build
 
 # Tests
 test: on
+test_script:
+  - ps: .\build.ps1 -Target Test
 
 #---------------------------------#
 #        Branches to build        #
