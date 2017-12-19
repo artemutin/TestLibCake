@@ -27,7 +27,6 @@ Task("NuGet-Restore")
 });
 
 Task("Build")
-    .IsDependentOn("NuGet")
     .Does(() =>
 {
     MSBuild("./" + solution + ".sln", settings =>
