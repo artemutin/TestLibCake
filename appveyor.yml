@@ -1,3 +1,6 @@
+build:
+  publish_nuget: true
+
 #---------------------------------#
 #  Build Script                   #
 #---------------------------------#
@@ -27,3 +30,14 @@ branches:
 #---------------------------------#
 cache:
 - Tools -> build.ps1
+
+
+#---------------------------------#
+#  Deploy                         #
+#---------------------------------#
+deploy:
+  - provider: NuGet
+    server: https://ci.appveyor.com/nuget/artemutin-3jj575ab2ab7
+    api_key:
+      secure: iqlq1qi66nascow18546o9d5
+    artifact: TestLibCake.nupkg
