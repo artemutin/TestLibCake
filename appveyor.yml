@@ -1,6 +1,8 @@
 #---------------------------------#
 #  Build Script                   #
 #---------------------------------#
+before_build:
+  - ps: .\build.ps1 -Target "NuGet-Restore"
 build_script:
   - ps: .\build.ps1 -Target Build
 
