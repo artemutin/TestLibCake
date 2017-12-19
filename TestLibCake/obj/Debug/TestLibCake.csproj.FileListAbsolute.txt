@@ -1,0 +1,6 @@
+D:\projects\TestLibCake\TestLibCake\bin\Debug\TestLibCake.dll
+D:\projects\TestLibCake\TestLibCake\bin\Debug\TestLibCake.pdb
+D:\projects\TestLibCake\TestLibCake\obj\Debug\TestLibCake.csprojResolveAssemblyReference.cache
+D:\projects\TestLibCake\TestLibCake\obj\Debug\TestLibCake.csproj.CoreCompileInputs.cache
+D:\projects\TestLibCake\TestLibCake\obj\Debug\TestLibCake.dll
+D:\projects\TestLibCake\TestLibCake\obj\Debug\TestLibCake.pdb
