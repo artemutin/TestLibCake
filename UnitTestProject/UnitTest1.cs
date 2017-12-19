@@ -13,7 +13,7 @@ namespace UnitTestProject
             var obj = new Class1();
             Assert.AreEqual(16, obj.Method(4));
             Assert.AreEqual(1, obj.Method(1));
-            Assert.AreEqual(25, obj.Method(-5));
+            Assert.AreEqual(26, obj.Method(-5));
         }
     }
 }

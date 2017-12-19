@@ -1,6 +1,16 @@
 using System.Xml.Linq;
 using System.IO;
 
+// https://github.com/cake-build/cake/issues/1522
+VSTestSettings FixToolPath(VSTestSettings settings)
+{
+    #tool vswhere
+    settings.ToolPath =
+        VSWhereLatest(new VSWhereLatestSettings { Requires = "Microsoft.VisualStudio.PackageGroup.TestTools.Core" })
+        .CombineWithFilePath(File(@"Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"));
+    return settings;
+}
+
 var target = Argument("target", "Build");
 var configuration = Argument("configuration", "Release");
 
@@ -35,8 +45,10 @@ Task("Build")
 });
 
 Task("Test")
+    .IsDependentOn("Build")
     .Does(() =>
 {
+    VSTest($"./UnitTestProject/bin/{configuration}/UnitTestProject.dll", FixToolPath(new VSTestSettings()));
     Information("Test completed...");
 });
 
