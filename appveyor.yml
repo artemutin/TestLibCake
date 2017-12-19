@@ -1,5 +1,12 @@
 build:
-  publish_nuget: true
+  publish_nuget: true             # package projects with .nuspec files and push to artifacts
+  publish_nuget_symbols: true     # generate and publish NuGet symbol packages
+  include_nuget_references: true  # add -IncludeReferencedProjects option while packaging NuGet artifacts
+
+nuget:
+  account_feed: true
+  project_feed: true
+  disable_publish_on_pr: true     # disable publishing of .nupkg artifacts to
 
 #---------------------------------#
 #  Build Script                   #
@@ -30,14 +37,3 @@ branches:
 #---------------------------------#
 cache:
 - Tools -> build.ps1
-
-
-#---------------------------------#
-#  Deploy                         #
-#---------------------------------#
-deploy:
-  - provider: NuGet
-    server: https://ci.appveyor.com/nuget/artemutin-3jj575ab2ab7
-    api_key:
-      secure: iqlq1qi66nascow18546o9d5
-    artifact: TestLibCake.nupkg
