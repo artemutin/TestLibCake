@@ -46,6 +46,7 @@ Task("Test")
 });
 
 Task("NuGet-Pack")
+    .IsDependentOn("Test")
     .Does(() =>
 {
     var projects = GetFiles("./**/*.nuspec")
