@@ -8,6 +8,11 @@ nuget:
   project_feed: true
   disable_publish_on_pr: true     # disable publishing of .nupkg artifacts to
 
+- provider: NuGet
+    server:  https://ci.appveyor.com/nuget/artemutin-3jj575ab2ab7
+    api_key:
+      secure: iqlq1qi66nascow18546o9d5
+
 #---------------------------------#
 #  Build Script                   #
 #---------------------------------#
